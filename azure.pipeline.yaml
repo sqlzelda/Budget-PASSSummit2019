@@ -34,3 +34,10 @@ steps:
     solution: '$(solution)'
     msbuildArgs: '/p:OctoPackPackageVersion=$(versionNumber)  /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)" /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare="$(build.artifactStagingDirectory)"'
     configuration: '$(buildConfiguration)'
+
+- task: runtsqltunittests@0
+  inputs:
+    connectionString: 'Data Source=localhost;Initial Catalog=tSQLt_PASSSummit2019;Integrated Security=SSPI;'
+    queryTimeout: '60'
+    rootOutput: '$(System.DefaultWorkingDirectory)/tSQLt-out'
+    testResultsFileName: 'TEST-Results.xml'
