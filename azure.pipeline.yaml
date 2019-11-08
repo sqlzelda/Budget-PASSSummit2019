@@ -38,24 +38,16 @@ steps:
 - task: SqlDacpacDeploymentOnMachineGroup@0
   inputs:
     TaskType: 'dacpac'
-    DacpacFile: '**/Budget_PASSSummit2019.dacpac'
-    TargetMethod: 'server'
-    ServerName: 'localhost'
-    DatabaseName: 'Budget_PASSSummit2019'
-    AuthScheme: 'sqlServerAuthentication'
-    SqlUsername: 'automateddeploy'
-    SqlPassword: '$(Password)'
+    DacpacFile: '**\Budget_PASSSummit2019.dacpac'
+    TargetMethod: 'connectionString'
+    ConnectionString: 'Data Source=localhost;Initial Catalog=Budget_PASSSummit2019;User ID=automateddeploy;Password=$(Password)'
 
 - task: SqlDacpacDeploymentOnMachineGroup@0
   inputs:
     TaskType: 'dacpac'
     DacpacFile: '**\tSQLt_PASSSummit2019.dacpac'
-    TargetMethod: 'server'
-    ServerName: 'localhost'
-    DatabaseName: 'tSQLt_PASSSummit2019'
-    AuthScheme: 'sqlServerAuthentication'
-    SqlUsername: 'automateddeploy'
-    SqlPassword: '$(Password)'
+    TargetMethod: 'connectionString'
+    ConnectionString: 'Data Source=localhost;Initial Catalog=tSQLt_PASSSummit2019;User ID=automateddeploy;Password=$(Password)'
 
 - task: runtsqltunittests@0
   inputs:
