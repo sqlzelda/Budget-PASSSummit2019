@@ -38,7 +38,7 @@ steps:
 - task: SqlDacpacDeploymentOnMachineGroup@0
   inputs:
     TaskType: 'dacpac'
-    DacpacFile: 'C:\Users\eliza\source\repos\Budget-PASSSummit2019\Budget-PASSSummit2019\bin\Debug\Budget_PASSSummit2019.dacpac'
+    DacpacFile: '**/Budget_PASSSummit2019.dacpac'
     TargetMethod: 'server'
     ServerName: 'localhost'
     DatabaseName: 'Budget_PASSSummit2019'
@@ -47,7 +47,7 @@ steps:
 - task: SqlDacpacDeploymentOnMachineGroup@0
   inputs:
     TaskType: 'dacpac'
-    DacpacFile: 'C:\Users\eliza\source\repos\Budget-PASSSummit2019\tSQLt-PASSSummit2019\bin\Debug\tSQLt_PASSSummit2019.dacpac'
+    DacpacFile: '**\tSQLt_PASSSummit2019.dacpac'
     TargetMethod: 'server'
     ServerName: 'localhost'
     DatabaseName: 'tSQLt_PASSSummit2019'
