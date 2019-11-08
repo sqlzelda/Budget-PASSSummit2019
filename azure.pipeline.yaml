@@ -16,3 +16,21 @@ variables:
   versionNumber: '$(MajorVersion).$(MinorVersion).$(Revision)-$(build.SourceBranchName)-$(GitVersion.ShortSha)'
   my-counter: '$(MinorVersion)'
   Revision: $[counter(variables['my-counter'],0)]
+
+name: $(versionNumber)
+steps:
+- task: NuGetToolInstaller@1
+
+- task: GitVersion@5
+  inputs:
+    runtime: 'full'
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '/p:OctoPackPackageVersion=$(versionNumber)  /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)" /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare="$(build.artifactStagingDirectory)"'
+    configuration: '$(buildConfiguration)'
