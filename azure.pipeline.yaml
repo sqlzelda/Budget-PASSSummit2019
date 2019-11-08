@@ -37,8 +37,8 @@ steps:
 
 - task: PublishDacPacTask@1
   inputs:
-    DacPacPath: '**\Budget_PASSSummit2019.dacpac'
-    DacPublishProfile: '**\Budget_PASSSummit2019.publish.xml'
+    DacPacPath: '**/Budget_PASSSummit2019.dacpac'
+    DacPublishProfile: '**/Budget_PASSSummit2019.publish.xml'
     TargetServerName: 'SYNAPSE'
     TargetDatabaseName: 'Budget_PASSSummit2019'
     SqlCmdVariableType: 'none'
