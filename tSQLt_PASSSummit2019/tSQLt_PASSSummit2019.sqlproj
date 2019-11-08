@@ -46,6 +46,8 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <SuppressTSqlWarnings>
+    </SuppressTSqlWarnings>
   </PropertyGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
@@ -65,7 +67,13 @@
     <Folder Include="tSQLt\User Defined Types\" />
     <Folder Include="Assemblies\" />
     <Folder Include="Security\" />
-    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
+    </ArtifactReference>
   </ItemGroup>
   <ItemGroup>
     <Build Include="tSQLt\Tables\Private_NewTestClassList.sql" />
@@ -212,10 +220,14 @@
     <Build Include="tSQLt\Stored Procedures\Reset.sql" />
     <Build Include="tSQLt\User Defined Types\Private.sql" />
     <Build Include="Security\tSQLt.sql" />
-    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Build Include="tSQLt\Tables\Private_AssertEqualsTableSchema_Expected.sql" />
+    <Build Include="tSQLt\Views\Private_SysIndexes.sql" />
+    <Build Include="tSQLt\Stored Procedures\AssertStringIn.sql" />
+    <Build Include="tSQLt\User Defined Types\AssertStringTable.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assemblies\tSQLtCLR.dll" />
+    <None Include="tSQLt_PASSSummit2019.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="tSQLtCLR">
