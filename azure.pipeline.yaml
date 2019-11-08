@@ -42,7 +42,9 @@ steps:
     TargetMethod: 'server'
     ServerName: 'localhost'
     DatabaseName: 'Budget_PASSSummit2019'
-    AuthScheme: 'windowsAuthentication'
+    AuthScheme: 'sqlServerAuthentication'
+    SqlUsername: 'automateddeploy'
+    SqlPassword: '$(Password)'
 
 - task: SqlDacpacDeploymentOnMachineGroup@0
   inputs:
@@ -51,7 +53,9 @@ steps:
     TargetMethod: 'server'
     ServerName: 'localhost'
     DatabaseName: 'tSQLt_PASSSummit2019'
-    AuthScheme: 'windowsAuthentication'
+    AuthScheme: 'sqlServerAuthentication'
+    SqlUsername: 'automateddeploy'
+    SqlPassword: '$(Password)'
 
 - task: runtsqltunittests@0
   inputs:
