@@ -35,20 +35,6 @@ steps:
     msbuildArgs: '/p:OctoPackPackageVersion=$(versionNumber)  /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)" /p:RunOctoPack=true /p:OctoPackPublishPackageToFileShare="$(build.artifactStagingDirectory)"'
     configuration: '$(buildConfiguration)'
 
-- task: SqlDacpacDeploymentOnMachineGroup@0
-  inputs:
-    TaskType: 'dacpac'
-    DacpacFile: '**\Budget_PASSSummit2019.dacpac'
-    TargetMethod: 'connectionString'
-    ConnectionString: 'Server=localhost;Database=Budget_PASSSummit2019;User ID=automateddeploy;Password=$(Password);'
-
-- task: SqlDacpacDeploymentOnMachineGroup@0
-  inputs:
-    TaskType: 'dacpac'
-    DacpacFile: '**\tSQLt_PASSSummit2019.dacpac'
-    TargetMethod: 'connectionString'
-    ConnectionString: 'Server=localhost;Database=tSQLt_PASSSummit2019;User ID=automateddeploy;Password=$(Password);'
-
 - task: runtsqltunittests@0
   inputs:
     connectionString: 'Data Source=localhost;Initial Catalog=tSQLt_PASSSummit2019;User ID=automateddeploy;Password=$(Password)'
