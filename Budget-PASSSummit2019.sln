@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Budget-PASSSummit2019", "Budget-PASSSummit2019\Budget-PASSSummit2019.sqlproj", "{660AC6F8-40C9-46D3-AC57-F3E69C47C83C}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Budget_PASSSummit2019", "Budget-PASSSummit2019\Budget_PASSSummit2019.sqlproj", "{660AC6F8-40C9-46D3-AC57-F3E69C47C83C}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "tSQLt_PASSSummit2019", "tSQLt_PASSSummit2019\tSQLt_PASSSummit2019.sqlproj", "{FFED0B79-0744-488D-B2B7-4B9A075E8E6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,12 @@ Global
 		{660AC6F8-40C9-46D3-AC57-F3E69C47C83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{660AC6F8-40C9-46D3-AC57-F3E69C47C83C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{660AC6F8-40C9-46D3-AC57-F3E69C47C83C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FFED0B79-0744-488D-B2B7-4B9A075E8E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFED0B79-0744-488D-B2B7-4B9A075E8E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFED0B79-0744-488D-B2B7-4B9A075E8E6A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FFED0B79-0744-488D-B2B7-4B9A075E8E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFED0B79-0744-488D-B2B7-4B9A075E8E6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFED0B79-0744-488D-B2B7-4B9A075E8E6A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
