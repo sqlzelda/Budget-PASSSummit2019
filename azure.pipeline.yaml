@@ -39,12 +39,8 @@ steps:
   inputs:
     TaskType: 'dacpac'
     DacpacFile: '**/Budget_PASSSummit2019.dacpac'
-    TargetMethod: 'server'
-    ServerName: 'localhost'
-    DatabaseName: 'Budget_PASSSummit2019'
-    AuthScheme: 'sqlServerAuthentication'
-    SqlUsername: 'automateddeploy'
-    SqlPassword: 'Air2Appa1'
+    TargetMethod: 'connectionString'
+    ConnectionString: 'Data Source=localhost;Initial Catalog=tSQLt_PASSSummit2019;User ID=automateddeploy;Password=Air2App1'
 
 - task: runtsqltunittests@0
   inputs:
